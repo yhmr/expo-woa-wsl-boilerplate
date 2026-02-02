@@ -3,20 +3,26 @@ import "dotenv/config";
 export default ({ config }) => {
   const slug = process.env.EXPO_PUBLIC_SLUG;
   const projectId = process.env.EXPO_PUBLIC_EAS_PROJECT_ID;
-  const webClientId = process.env.EXPO_PUBLIC_WEB_CLIENT_ID;
 
-  if (!slug || !projectId || !webClientId) {
+  if (!slug || !projectId) {
     console.error(
       "\n\x1b[31m[Error] 必須の環境変数が設定されていません。\x1b[0m",
     );
     if (!slug) console.error("\x1b[33m- EXPO_PUBLIC_SLUG\x1b[0m");
     if (!projectId)
       console.error("\x1b[33m- EXPO_PUBLIC_EAS_PROJECT_ID\x1b[0m");
-    if (!webClientId)
-      console.error("\x1b[33m- EXPO_PUBLIC_WEB_CLIENT_ID\x1b[0m");
+
     console.error("\n.env ファイルを作成し、これらの値を設定してください。");
     console.error(".env.example を参考にしてください。\n");
     throw new Error("Missing required environment variables.");
+  }
+
+  const webClientId = process.env.EXPO_PUBLIC_WEB_CLIENT_ID;
+
+  if (!webClientId) {
+    console.warn(
+      "\x1b[33m[Warn] EXPO_PUBLIC_WEB_CLIENT_ID が設定されていません。Google Sign-In は機能しません。\x1b[0m",
+    );
   }
 
   const isSentryEnabled = !!process.env.EXPO_PUBLIC_SENTRY_DSN;
