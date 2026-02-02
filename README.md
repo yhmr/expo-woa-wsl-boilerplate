@@ -1,6 +1,6 @@
-# Expo Android Starter
+# Expo WoA/WSL Boilerplate
 
-A clean, opinionated Expo starter template optimized for **Android development**.
+A clean, opinionated Expo starter template optimized for **Android development on Windows on Arm (WoA) / WSL**.
 Built for high-quality production apps with a focus on testing, maintainability, and cross-platform compatibility (including Windows on Arm).
 
 ## Features
@@ -31,7 +31,7 @@ cp .env.example .env
 ```
 
 Edit `.env` to set your Expo project details:
-- `EXPO_PUBLIC_SLUG`: Your app slug
+- `EXPO_PUBLIC_SLUG`: Your app slug (default: `expo-woa-wsl-boilerplate`)
 - `EXPO_PUBLIC_EAS_PROJECT_ID`: Your EAS project ID
 
 ### 3. Development
