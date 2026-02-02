@@ -1,15 +1,13 @@
 # Expo WoA/WSL Boilerplate
 
 A clean, opinionated Expo starter template optimized for **Android development on Windows on Arm (WoA) / WSL**.
-Built for high-quality production apps with a focus on testing, maintainability, and cross-platform compatibility (including Windows on Arm).
+Built for high-quality production apps with a focus on testing, maintainability.
 
 ## Features
 
 - **Architecture**: Clean `src/` directory structure with modular feature separation
-- **Database**: Pre-configured with `expo-sqlite`
 - **Testing**: Ready-to-use Unit Testing environment with **Vitest** + React Native Mocks
 - **Quality Control**: Strict linting with **ESLint (Flat Config)** + **Prettier**
-- **State Management**: **Zustand** included for simple and scalable state management
 - **CI/CD Ready**: GitHub Actions workflow pre-configured for automated testing
 - **Windows on Arm Support**: Includes custom Hermes plugin (`withWoAFix`) for WoA / WSL environments
 - **Local Build Automation**: Script included for easy local Android builds
@@ -69,8 +67,6 @@ src/
 ├── app/          # Expo Router (File-based routing)
 ├── components/   # Shared UI Components
 ├── features/     # Feature-specific modules
-├── db/           # Database setup and migrations
-├── services/     # External integrations (Health Connect, API clients)
 ├── hooks/        # Custom React hooks
 ├── constants/    # Theme and configuration constants
 └── types/        # TypeScript type definitions

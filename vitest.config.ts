@@ -11,11 +11,7 @@ export default defineConfig({
     __DEV__: true,
   },
   test: {
-    server: {
-      deps: {
-        inline: ["react-native-health-connect"],
-      },
-    },
+
     globals: true,
     environment: "node",
     setupFiles: ["./__tests__/setup.ts"],
