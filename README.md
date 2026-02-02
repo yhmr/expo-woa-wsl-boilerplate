@@ -1,7 +1,7 @@
 # Expo Android Starter
 
-A clean, opinionated Expo starter template optimized for Android development.
-Built for high-quality production apps with a focus on testing and maintainability.
+A clean, opinionated Expo starter template optimized for **Android development**.
+Built for high-quality production apps with a focus on testing, maintainability, and cross-platform compatibility (including Windows on Arm).
 
 ## Features
 
@@ -10,8 +10,57 @@ Built for high-quality production apps with a focus on testing and maintainabili
 - **Testing**: Ready-to-use Unit Testing environment with **Vitest** + React Native Mocks
 - **Quality Control**: Strict linting with **ESLint (Flat Config)** + **Prettier**
 - **State Management**: **Zustand** included for simple and scalable state management
-- **Integrations**: Pre-installed `react-native-health-connect` for health data sync
-- **Clean Slate**: No web support, no boilerplate UI code—just the essentials
+- **CI/CD Ready**: GitHub Actions workflow pre-configured for automated testing
+- **Windows on Arm Support**: Includes custom Hermes plugin (`withWoAFix`) for WoA / WSL environments
+- **Local Build Automation**: Script included for easy local Android builds
+
+## Getting Started
+
+### 1. Installation
+
+```bash
+npm install
+```
+
+### 2. Configuration
+
+Copy the example environment file and configure your keys.
+
+```bash
+cp .env.example .env
+```
+
+Edit `.env` to set your Expo project details:
+- `EXPO_PUBLIC_SLUG`: Your app slug
+- `EXPO_PUBLIC_EAS_PROJECT_ID`: Your EAS project ID
+
+### 3. Development
+
+Start the development server:
+
+```bash
+npm start
+```
+
+## Build & Release
+
+### Local Android Build
+
+A helper script is included to streamline local Android builds (Debug/Release).
+
+```bash
+# Run debug build
+npm run build:android
+
+# Or specify mode
+node scripts/build-android.js release
+```
+
+This script handles dependency installation, prebuild, and Gradle execution automatically.
+
+### CI/CD
+
+The repository includes a GitHub Actions workflow (`.github/workflows/test.yaml`) that automatically runs tests on Pull Requests.
 
 ## Project Structure
 
@@ -27,36 +76,10 @@ src/
 └── types/        # TypeScript type definitions
 ```
 
-## Getting Started
-
-### 1. Installation
-
-```bash
-npm install
-```
-
-### 2. Run Tests
-
-Verify that everything is set up correctly.
-
-```bash
-npm run test
-```
-
-### 3. Development
-
-Start the Android development server.
-
-```bash
-npm run android
-```
-
-> **Note**: This template is configured for **Development Builds** (`npx expo prebuild`). You might need to run prebuild if you add native modules.
-
 ## Available Scripts
 
+- `npm start`: Start the Expo development server
+- `npm run android`: Run on Android emulator/device
 - `npm run test`: Run unit tests with Vitest
-- `npm run test:run`: Run tests once (no watch mode)
-- `npm run lint`: Check for linting errors
 - `npm run lint:fix`: Auto-fix linting and formatting issues
-- `npm run android`: Start the app on an Android emulator or device
+- `npm run build:android`: Build Android APK locally
