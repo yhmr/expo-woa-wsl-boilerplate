@@ -8,6 +8,7 @@ Built for high-quality production apps with a focus on testing, maintainability.
 - **Architecture**: Clean `src/` directory structure with modular feature separation
 - **Testing**: Ready-to-use Unit Testing environment with **Vitest** + React Native Mocks
 - **Quality Control**: Strict linting with **ESLint (Flat Config)** + **Prettier**
+- **Error Monitoring (optional)**: Pre-configured with **Sentry** for crash reporting and performance monitoring
 - **CI/CD Ready**: GitHub Actions workflow pre-configured for automated testing
 - **Windows on Arm Support**: Includes custom Hermes plugin (`withWoAFix`) for WoA / WSL environments
 - **Local Build Automation**: Script included for easy local Android builds
@@ -31,6 +32,7 @@ cp .env.example .env
 Edit `.env` to set your Expo project details:
 - `EXPO_PUBLIC_SLUG`: Your app slug (default: `expo-woa-wsl-boilerplate`)
 - `EXPO_PUBLIC_EAS_PROJECT_ID`: Your EAS project ID
+- `EXPO_PUBLIC_SENTRY_DSN`: (Optional) Sentry DSN for error monitoring
 
 ### 3. Development
 
